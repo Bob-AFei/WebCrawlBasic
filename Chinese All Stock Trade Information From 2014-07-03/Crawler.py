@@ -1,8 +1,21 @@
+# 本代码运行后将截取所有中国股票的近五年的交易信息
+# this program will download all Chinese stocks' trading information in the recent 5 years.
+
 import requests
 import re
 import os
 from bs4 import BeautifulSoup
 from multiprocessing import Pool
+
+# 本代码从东方财富网截取所有股票代码，从雅虎财经下载所有近五年的股票信息(2014/7/3 - 2019/7/3)
+# this code will get All stock number from eastmoney, 
+# this code will download all stocks trading information in the recent 5 years (3rd,Jul,2014 - 3rd,Jul,2019)
+# 本代码采用多进程形式，降低运行时间
+# this code will use multi processing to reduce the running time
+# 完全遵守相关爬虫协议
+# this coide follows the /Robots.txt
+
+
 
 _URL1_ = 'https://query1.finance.yahoo.com/v7/finance/download/'
 _URL2_ = '.SS?period1=1404397800&period2=1562164200&interval=1d&events=history&crumb=PXouoNWzdUz'
